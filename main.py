@@ -10,11 +10,10 @@ class MyWidget(QMainWindow):
     def __init__(self):
         super().__init__()
         uic.loadUi('UI.ui', self)
-        self.do_paint = False
         self.pushButton.clicked.connect(self.create)
 
     def draw(self, qp):
-        qp.setBrush(QColor(255, 255, 0))
+        qp.setBrush(QColor(randint(0, 255), randint(0, 255), randint(0, 255)))
         r = randint(0, 250)
         qp.drawEllipse(randint(0, 400 - r), randint(0, 300 - r), r, r)
 
