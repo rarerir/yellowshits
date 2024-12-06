@@ -1,15 +1,15 @@
 import sys
-from PyQt6 import uic
+from UI import Ui_Form
 from random import randint
 from PyQt6.QtGui import QColor, QPainter
 from PyQt6.QtWidgets import QApplication
 from PyQt6.QtWidgets import QMainWindow
 
 
-class MyWidget(QMainWindow):
+class MyWidget(QMainWindow, Ui_Form):
     def __init__(self):
         super().__init__()
-        uic.loadUi('UI.ui', self)
+        self.setupUi(self)
         self.pushButton.clicked.connect(self.create)
 
     def draw(self, qp):
